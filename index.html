@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoboChamps - STEM Robotics Education</title>
+    <title>RoboNest - STEM Robotics Education</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo:wght@400;600&display=swap"
         rel="stylesheet">
     <style>
@@ -30,12 +30,18 @@
 
         h1 span.blue {
             color: #00AEEF;
-            /* Blue color */
+            font-size: 3.5rem;
+            /* adjust size as needed */
+            font-weight: bold;
+
         }
 
         h1 span.orange {
             color: #FF7A00;
             /* Orange color */
+            /* adjust size as needed */
+            font-weight: bold;
+            font-size: 3.5rem;
         }
 
         .rainbow-text {
@@ -104,15 +110,29 @@
             color: #FFFFFF;
         }
 
+
+
         .logo-img {
-            height: 120px;
-            /* smaller logo */
-            width: auto;
+            width: 120px !important;
+            /* fixed size everywhere */
+            height: auto !important;
+            /* keep proportions */
+            object-fit: contain;
             padding-top: 5px;
-            /* space from top */
-            padding-right: 10px;
-            /* space between logo and text */
+            margin-left: -20px;
+            /* move logo left */
+
+            display: block;
         }
+
+        @media (max-width: 600px) {
+            .logo-img {
+                width: 100px !important;
+                /* a bit bigger on small screens */
+            }
+        }
+
+
 
         .icon {
             margin-right: 5px;
@@ -122,6 +142,12 @@
             list-style: none;
             display: flex;
         }
+
+        ul li a {
+            font-weight: 800;
+            /* 700 = bold, 600 = semi-bold */
+        }
+
 
         #nav li {
             margin: 0 15px;
@@ -135,7 +161,7 @@
 
         #nav a:hover,
         #nav .cta {
-            color: #39FF14;
+            color: #ff8914;
         }
 
         .hamburger {
@@ -152,6 +178,587 @@
         }
 
         /* Hero */
+        <style>* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Exo', sans-serif;
+            line-height: 1.6;
+            color: #1E1E1E;
+            background: #FFFFFF;
+            overflow-x: hidden
+        }
+
+        h1,
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00AEEF
+        }
+
+        h1 span.blue {
+            color: #00AEEF;
+            font-size: 3.5rem;
+            font-weight: bold
+        }
+
+        h1 span.orange {
+            color: #FF7A00;
+            font-weight: bold;
+            font-size: 3.5rem
+        }
+
+        .rainbow-text {
+            font-weight: bold;
+            font-size: 24px;
+            background: linear-gradient(to right, red 1%, orange 10%, yellow 20%, green 30%, rgb(0, 170, 255) 49%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #14b8ff;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s
+        }
+
+        .btn:hover {
+            background: #FF7A00;
+            box-shadow: 0 0 10px #1476ff
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px
+        }
+
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(to right, #092239, #30778e);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+            height: 80px
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+            cursor: pointer;
+            text-decoration: none
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #FFFFFF
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            padding-top: 5px;
+            margin-left: -20px;
+            display: block
+        }
+
+        @media (max-width:600px) {
+            .logo-img {
+                width: 100px
+            }
+        }
+
+        #nav ul {
+            list-style: none;
+            display: flex
+        }
+
+        #nav li {
+            margin: 0 15px
+        }
+
+        #nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 800
+        }
+
+        #nav a:hover,
+        #nav .cta {
+            color: #ff8914
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #FFFFFF;
+            margin: 3px 0
+        }
+
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(to right, #1E1E1E, #04394c);
+            color: #FFFFFF;
+            padding: 20px;
+            flex-wrap: wrap;
+            width: 100%
+        }
+
+        .hero-content {
+            flex: 1 1 400px;
+            padding: 20px
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin: 0
+        }
+
+        .hero-image {
+            flex: 1 1 300px;
+            text-align: center
+        }
+
+        .hero-image video {
+            width: 140%;
+            max-width: none;
+            height: auto;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            margin-top: 80px;
+            transform: translateX(2%);
+        }
+
+
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            #hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 80px
+            }
+
+            .hero-content h1 {
+                font-size: 36px
+            }
+
+            .hero-content p {
+                font-size: 18px
+            }
+
+            .hero-image {
+                margin-top: 20px
+            }
+
+            .hero-image video {
+                width: 90vw;
+                height: auto;
+                margin-top: 30px
+            }
+        }
+
+        #about {
+            background: #FFFFFF;
+            padding: 50px 0
+        }
+
+        #about .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap
+        }
+
+        #about .text {
+            flex: 1
+        }
+
+        #about .image {
+            flex: 1;
+            text-align: center
+        }
+
+        #about .image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px
+        }
+
+        .blue {
+            color: #00AEE2eb;
+            font-weight: 700
+        }
+
+        .orange {
+            color: #f56f15;
+            font-weight: 700
+        }
+
+        #programs {
+            background: linear-gradient(to right, #1E1E1E, #04394c);
+            padding: 50px 0
+        }
+
+        #programs h1 {
+            margin-bottom: 40px;
+            text-align: center;
+            color: #fff
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            perspective: 1000px
+        }
+
+        .card {
+            background: transparent;
+            height: 350px;
+            cursor: pointer
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            border-radius: 10px
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg)
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center
+        }
+
+        .card-front {
+            background: #fff
+        }
+
+        .card-front img {
+            width: 80%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            margin: 0 auto 15px
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, #ff6f00, #2b2b2b, #3e3e3e);
+            color: #fff;
+            transform: rotateY(180deg)
+        }
+
+        .btn1 {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ef7503;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background 0.3s
+        }
+
+        .btn1:hover {
+            background: #46bee2
+        }
+
+        #gallery {
+            background: #fff;
+            padding: 50px 0
+        }
+
+        #gallery h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #00AEEF
+        }
+
+        #gallery .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px
+        }
+
+        #gallery .card {
+            background: linear-gradient(to right, #1E1E1E, #04394c);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer
+        }
+
+        #gallery .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px #00AEEF
+        }
+
+        #gallery .card img {
+            width: 80%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px
+        }
+
+        #gallery .card h3 {
+            margin-bottom: 10px;
+            color: #fff
+        }
+
+        #gallery .card p {
+            color: #ffff;
+            font-size: 0.9rem
+        }
+
+        #achievements {
+            background: linear-gradient(to right, #1E1E1E, #04394c);
+            color: #FFFFFF;
+            padding: 50px 0;
+            text-align: center
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap
+        }
+
+        .stat .number {
+            font-size: 48px;
+            font-weight: bold
+        }
+
+        #partners {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center
+        }
+
+        #partners h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #04394c
+        }
+
+        .logo-slider {
+            overflow: hidden;
+            position: relative
+        }
+
+        .logo-track {
+            display: flex;
+            animation: scroll 20s linear infinite
+        }
+
+        .logo-item {
+            flex: 0 0 auto;
+            margin: 0 40px;
+            text-align: center
+        }
+
+        .logo-item img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease
+        }
+
+        .logo-item img:hover {
+            transform: scale(1.1)
+        }
+
+        .logo-item p {
+            font-size: 14px;
+            color: #333;
+            font-weight: 600
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(-50%)
+            }
+        }
+
+        #contact {
+            background: linear-gradient(to right, #1E1E1E, #04394c);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center
+        }
+
+        .center-heading {
+            font-size: 32px;
+            margin-bottom: 30px
+        }
+
+        #contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px
+        }
+
+        #contact-form button {
+            background-color: #00AEEF;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer
+        }
+
+        #contact-form button:hover {
+            background-color: #FFA500
+        }
+
+        .social {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px
+        }
+
+        .social img {
+            width: 40px;
+            height: 40px;
+            display: block;
+            transition: transform 0.3s ease
+        }
+
+        .social img:hover {
+            transform: scale(1.1)
+        }
+
+        footer {
+            background: #1E1E1E;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px
+        }
+
+        @media (max-width:768px) {
+            #header {
+                height: 60px
+            }
+
+            #nav {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #1E1E1E;
+                flex-direction: column;
+                align-items: center
+            }
+
+            #nav.active {
+                display: flex
+            }
+
+            #nav ul {
+                flex-direction: column;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                width: 100%
+            }
+
+            #nav li {
+                margin: 15px 0
+            }
+
+            #nav li a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1.2rem
+            }
+
+            .hamburger {
+                display: flex
+            }
+        }
+
+        /*hero*/
+
         #hero {
             min-height: 100vh;
             /* use min-height instead of fixed height */
@@ -165,6 +772,14 @@
             flex-wrap: wrap;
             /* allow stacking on smaller screens */
         }
+
+        @media (max-width: 600px) {
+            #hero {
+                padding-top: 100px;
+                /* pushes text below navbar */
+            }
+        }
+
 
         .hero-content {
             flex: 1 1 400px;
@@ -251,7 +866,7 @@
         }
 
         #about .image img {
-            max-width: 70%;
+            max-width: 100%;
             /* Reduce image size */
             height: auto;
             /* Maintain aspect ratio */
@@ -259,6 +874,33 @@
             /* Optional: rounded corners */
         }
 
+        .blue {
+            color: #00AEE2eb;
+            /* bright blue */
+            font-weight: 700;
+        }
+
+        .orange {
+            color: #f56f15;
+            /* orange */
+            font-weight: 700;
+        }
+
+        #about .text p {
+            text-align: justify;
+            text-justify: inter-word;
+            line-height: 1.6;
+        }
+
+        #about .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            /* space between text and image */
+            flex-wrap: wrap;
+            /* for responsive layout */
+        }
 
         /* Programs */
         #programs {
@@ -327,7 +969,14 @@
 
 
         .card-back {
-            background: linear-gradient(135deg, #212b2e, #302424, #534d37, #486d4d);
+            /*background: linear-gradient(135deg, #212b2e, #302424, #534d37, #486d4d);*/
+
+            background: linear-gradient(135deg, #1a2a2a, #234343, #3c6e71);
+            background: linear-gradient(135deg, #1f1c2c, #2e4a62, #3a6073);
+            background: linear-gradient(135deg, #ff6f00, #2b2b2b, #3e3e3e);
+
+
+
             color: #fff;
             transform: rotateY(180deg);
             /* Optional styling for smooth effect */
@@ -353,7 +1002,7 @@
         .btn1 {
             display: inline-block;
             padding: 10px 20px;
-            background: #5be86c;
+            background: #ef7503;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
@@ -362,7 +1011,7 @@
         }
 
         .btn1:hover {
-            background: #ef7503;
+            background: #46bee2;
         }
 
 
@@ -423,9 +1072,6 @@
         /* Make all text inside gallery white */
 
 
-
-
-
         /* Achievements */
         #achievements {
             background: linear-gradient(to right, #1E1E1E, #04394c);
@@ -446,55 +1092,70 @@
         }
 
         /* Testimonials */
-        #testimonials {
-            background: #FFFFFF;
-            padding: 50px 0;
+        #partners {
+            background: #f8f9fa;
+            padding: 60px 20px;
             text-align: center;
         }
 
-        .carousel {
-            position: relative;
+        #partners h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #04394c;
+        }
+
+        .logo-slider {
             overflow: hidden;
+            position: relative;
         }
 
-        .slide {
-            display: none;
-        }
-
-        .slide.active {
-            display: block;
-        }
-
-        /* Contact 
-        #contact {
-            background: linear-gradient(to right, #1E1E1E, #04394c);
-            color: #FFFFFF;
-            padding: 50px 0;
-        }
-
-        #contact-form {
+        .logo-track {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 400px;
-            margin: 0 auto;
+            animation: scroll 20s linear infinite;
         }
 
-        #contact-form input,
-        #contact-form textarea {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
+        .logo-item {
+            flex: 0 0 auto;
+            margin: 0 40px;
+            text-align: center;
         }
 
-        .social {
-            margin-top: 20px;
+        .logo-item img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
         }
 
-        .social a {
-            color: #FFFFFF;
-            margin: 0 10px;
-        }*/
+        .logo-item img:hover {
+            transform: scale(1.1);
+        }
+
+        .logo-item p {
+            font-size: 14px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Animation */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        #partners h2 {
+            color: #151414c5;
+            /* blue color */
+        }
+
+
+
+
         /* Contact section styling */
         #contact {
             background: linear-gradient(to right, #1E1E1E, #04394c);
@@ -665,6 +1326,136 @@
                 padding-right: 8px;
             }
         }
+
+        /* Main container */
+        #hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px;
+            flex-wrap: wrap;
+        }
+
+        /* Make video big on large screens */
+        .hero-image video {
+            width: 900px;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            margin-top: 80px;
+            /* 👈 Push video down a bit */
+        }
+
+
+        /* For tablets */
+        @media (max-width: 1024px) {
+            .hero-image video {
+                width: 700px;
+                height: 400px;
+            }
+        }
+
+        /* For phones */
+        @media (max-width: 768px) {
+            #hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image video {
+                width: 400px;
+                height: 700px;
+                margin-bottom: 500px;
+            }
+        }
+
+        /* .peek-img {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            height: 250px;
+            z-index: 1000;
+            transform: translateX(-33%) rotateY(180deg);
+            pointer-events: none;
+        }*/
+
+        .peek-img {
+            position: fixed;
+            left: 0;
+            height: 150px;
+            /* adjust size */
+            z-index: 1000;
+            transform: translateX(-33%) rotateY(180deg);
+            pointer-events: none;
+            transition: bottom 0.2s;
+            /* smooth movement */
+        }
+
+        @media screen and (max-width: 1024px) {
+            .peek-img {
+                display: none;
+            }
+        }
+
+
+
+        @keyframes peekIn {
+            from {
+                transform: translateX(-100%) rotateY(180deg);
+            }
+
+            to {
+                transform: translateX(-33%) rotateY(180deg);
+            }
+        }
+
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            #nav {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #1E1E1E;
+                flex-direction: column;
+                align-items: center;
+                /* centers menu items horizontally */
+            }
+
+            #nav.active {
+                display: flex;
+            }
+
+            #nav ul {
+                flex-direction: column;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                /* centers text inside list items */
+                width: 100%;
+                /* optional, ensures centering */
+            }
+
+            #nav li {
+                margin: 15px 0;
+                /* spacing between items */
+            }
+
+            #nav li a {
+                color: #fff;
+                /* menu item color */
+                text-decoration: none;
+                font-size: 1.2rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
     </style>
 </head>
 
@@ -698,26 +1489,37 @@
     <section id="hero">
         <div class="hero-content">
             <h1>
-                <span class="blue">Robo</span><span class="orange">Nest</span>
+                <span class="blue">ROBO</span><span class="orange">NEST</span>
             </h1>
             <p class="rainbow-text">From Imagination to Innovation</p>
-
             <a href="#contact" class="btn">Enroll Today</a>
         </div>
+
         <div class="hero-image">
-            <img src="hand.png" alt="Robot and Student">
+            <video autoplay muted loop playsinline>
+                <source src="vido.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </section>
+
+
+
+
 
     <!-- About Us -->
     <section id="about">
         <div class="container">
             <div class="text">
                 <h2>About Us</h2>
-                <p>At RoboChamps, we blend innovation and education to make robotics fun and accessible. Inspiring 200K+
-                    students worldwide.</p>
+                <p>At <span class="blue">Robo</span><span class="orange">Nest</span>,
+                    We empowers students to turn
+                    imagination into innovation. We make robotics
+                    education engaging, affordable, and impactful
+                    for learners across the globe.</p>
                 <a href="#programs" class="btn">Learn More</a>
             </div>
+            <br><br>
             <div class="image">
                 <img src="team.jpeg" alt="Team Activity">
             </div>
@@ -872,23 +1674,115 @@
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials">
+    <section id="partners">
         <div class="container">
-            <h2>Testimonials</h2>
-            <div class="carousel">
-                <div class="slide active">
-                    <p>"My kid built a robot and won—pure fun!"</p>
-                    <cite>- Parent</cite>
-                </div>
-                <div class="slide">
-                    <p>"Robotics changed my life!"</p>
-                    <cite>- Student</cite>
+            <h2>Our Partner Schools</h2>
+            <div class="logo-slider">
+                <div class="logo-track">
+                    <!-- Original Set -->
+                    <div class="logo-item">
+                        <img src="Narayana.png" alt="School 4">
+                        <p>Narayana Schools</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="SRI PRAKASH.png" alt="School 2">
+                        <p>Sri prakash vidyaniketan Schools</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="svis.png" alt="School 3">
+                        <p>Sree Vidyanikethan International School</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="BHASHYAM.webp" alt="School 1">
+                        <p>Bhashyam School</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="Andhra Jatheeya Vidya Parishad.png" alt="School 5">
+                        <p>Andhra Jatheeya Vidya Parishad School</p>
+                    </div>
+
+                    <!-- Duplicate Set (for seamless looping) -->
+                    <div class="logo-item">
+                        <img src="Narayana.png" alt="School 4">
+                        <p>Narayana Schools</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="SRI PRAKASH.png" alt="School 2">
+                        <p>Sri prakash vidyaniketan Schools</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="svis.png" alt="School 3">
+                        <p>Sree Vidyanikethan International School</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="BHASHYAM.webp" alt="School 1">
+                        <p>Bhashyam School</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="Andhra Jatheeya Vidya Parishad.png" alt="School 5">
+                        <p>Andhra Jatheeya Vidya Parishad School</p>
+                    </div>
                 </div>
             </div>
-            <button id="prev">Prev</button>
-            <button id="next">Next</button>
         </div>
     </section>
+
+    <!-- Testimonials -->
+    <section id="partners">
+        <div class="container">
+            <h2>Our Partners</h2>
+            <div class="logo-slider">
+                <div class="logo-track">
+                    <!-- Original Set -->
+                    <div class="logo-item">
+                        <img src="STEMpedia.png" alt="School 1">
+                        <p>STEMpedia</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="BrightChampsLogo.webp" alt="School 2">
+                        <p>BrightChamps</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="edac.png" alt="School 3">
+                        <p>E-DAC</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="STEMfinity.avif" alt="School 4">
+                        <p>STEMfinity</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="STEMLearning.svg" alt="School 5">
+                        <p>STEMLearning</p>
+                    </div>
+
+                    <!-- Duplicate Set (for seamless looping) -->
+                    <div class="logo-item">
+                        <img src="STEMpedia.png" alt="School 1">
+                        <p>STEMpedia</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="BrightChampsLogo.webp" alt="School 2">
+                        <p>BrightChamps</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="edac.png" alt="School 3">
+                        <p>E-DAC</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="STEMfinity.avif" alt="School 4">
+                        <p>STEMfinity</p>
+                    </div>
+                    <div class="logo-item">
+                        <img src="STEMLearning.svg" alt="School 5">
+                        <p>STEMLearning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
 
     <!-- Contact -->
     <section id="contact">
@@ -905,9 +1799,10 @@
 
             <!-- Social icons centered below button -->
             <div class="social">
-                <a href="#"><img src="linkedin.svg" alt="LinkedIn"></a>
+                <a href="https://www.linkedin.com/in/polabathula-sriram-679490235/"><img src="linkedin.svg"
+                        alt="LinkedIn"></a>
                 <a href="#"><img src="instagram.svg" alt="Instagram"></a>
-                <a href="#"><img src="youtube.svg" alt="YouTube"></a>
+                <a href="https://www.youtube.com/@ArduinoProjectsVlogsTelugu"><img src="youtube.svg" alt="YouTube"></a>
                 <a href="#"><img src="facebook.svg" alt="Facebook"></a>
             </div>
         </div>
@@ -921,75 +1816,96 @@
 
     </footer>
 
-
     <script>
-        // Mobile Menu Toggle
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value.trim();
+                const number = document.getElementById('number').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                // ✅ Your WhatsApp number (with country code)
+                const whatsappNumber = "919618223693"; // 91 + your mobile number
+
+                // ✅ Make "New Join Request." dark (bold) — this will show bold text without stars
+                const text =
+                    `*New Join Request.*\nName: ${name}\nNumber: ${number}\nEmail: ${email}\nMessage: ${message}`;
+
+                // ✅ Encode and open WhatsApp
+                const whatsappMessage = encodeURIComponent(text);
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+                window.open(whatsappURL, "_blank");
+            });
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const counters = document.querySelectorAll('.number');
+            const speed = 200; // lower = faster
+
+            const startCounting = () => {
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+
+                        const increment = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + increment);
+                            setTimeout(updateCount, 10);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                });
+            };
+
+            // Trigger when the section becomes visible
+            const achievementsSection = document.querySelector('#achievements');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startCounting();
+                        observer.disconnect(); // run once
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(achievementsSection);
+        });
+
+        /* side image*/
+        document.addEventListener("scroll", function () {
+            const peek = document.querySelector(".peek-img");
+            const scrollTop = window.scrollY;
+            const pageHeight = document.body.scrollHeight - window.innerHeight;
+
+            const scrollPercent = scrollTop / pageHeight;
+
+            // Maximum distance to move (less than full viewport height)
+            const maxMove = window.innerHeight / 1.4; // moves up only half the screen
+            peek.style.bottom = `${scrollPercent * maxMove}px`;
+        });
+
         const hamburger = document.getElementById('hamburger');
         const nav = document.getElementById('nav');
+
         hamburger.addEventListener('click', () => {
             nav.classList.toggle('active');
         });
 
-        // Achievement Counters
-        const counters = document.querySelectorAll('.number');
-        const speed = 200;
-        counters.forEach(counter => {
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const inc = target / speed;
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(updateCount, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            };
-            updateCount();
-        });
-
-        // Testimonials Carousel
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.getElementById('prev');
-        const nextBtn = document.getElementById('next');
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            slides[index].classList.add('active');
-        }
-        prevBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        });
-        nextBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        });
-
-        // Form Validation
-        const form = document.getElementById('contact-form');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Form submitted! (Demo only)');
-        });
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent actual form submission
-
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var number = document.getElementById('number').value;
-            var message = document.getElementById('message').value;
-
-            // Your WhatsApp number (include country code, e.g., 15551234567)
-            var whatsappNumber = "919618223693";
-
-            // Pre-filled message
-            var whatsappMessage = `New Join Request:%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-
-            // Open WhatsApp
-            window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
-        });
     </script>
+
+    <img src="mainrm.png" alt="Peeking Character" class="peek-img">
+
 </body>
 
 </html>
