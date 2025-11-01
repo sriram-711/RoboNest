@@ -375,27 +375,43 @@
             #hero {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 80px
+                padding-top: 300px;
+                /* 👈 increase space below fixed navbar */
+            }
+
+            .hero-content {
+                margin-top: 80px;
+                /* 👈 moves ALL text (ROBONEST, tagline, button) down */
             }
 
             .hero-content h1 {
-                font-size: 36px
+                font-size: 36px;
             }
 
             .hero-content p {
-                font-size: 18px
+                font-size: 22px;
+                margin-top: -15px;
+            }
+
+            .hero-content p.rainbow-text {
+                font-size: 24px;
+                /* 👈 increased font size */
+                font-weight: 400;
+                /* makes it bolder */
+                line-height: 1.2;
             }
 
             .hero-image {
-                margin-top: 20px
+                margin-top: 20px;
             }
 
             .hero-image video {
                 width: 90vw;
                 height: auto;
-                margin-top: 30px
+                margin-top: 30px;
             }
         }
+
 
         #about {
             background: #FFFFFF;
@@ -1373,13 +1389,16 @@
 
             .hero-image video {
                 width: 90%;
-                height: auto;
+                height: 120vh;
+                /* 👈 increases vertical height */
                 margin-top: 30px;
                 border-radius: 12px;
-                transform: translateX(-8px);
-                /* 👈 moves slightly left */
+                object-fit: cover;
+                transform: translateX(0px);
+                /* optional: small left shift */
             }
         }
+
 
 
         /* .peek-img {
